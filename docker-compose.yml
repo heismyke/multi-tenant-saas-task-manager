@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: saas-task-manager-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: saas_tasks
+    ports:
+      - "5433:5432"
+    volumes:
+      - saas_task_manager_pgdata:/var/lib/postgresql/data
+
+volumes:
+  saas_task_manager_pgdata:
+
